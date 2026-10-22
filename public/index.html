@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Find language partners and discover new cultures with Culture Exchange Network.">
+    <title>Culture Exchange Network</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container">
+        <header>
+            <div class="logo" aria-hidden="true">🌍</div>
+            <h1>Culture Exchange Network</h1>
+            <p>Meet people from around the world, exchange languages, and discover new cultures together.</p>
+        </header>
+
+        <section class="panel">
+            <h2>Create your profile</h2>
+            <p class="panel-description">Tell us about yourself to discover your language partners.</p>
+
+            <form id="profileForm">
+                <div class="form-field">
+                    <label for="name">Your name</label>
+                    <input id="name" name="name" type="text" placeholder="e.g. Abinaya" required>
+                </div>
+
+                <div class="form-field">
+                    <label for="country">Your country</label>
+                    <input id="country" name="country" type="text" placeholder="e.g. India" required>
+                </div>
+
+                <div class="form-field">
+                    <label for="nativeLanguage">Native language</label>
+                    <input id="nativeLanguage" name="nativeLanguage" type="text" placeholder="e.g. Tamil" required>
+                </div>
+
+                <div class="form-field">
+                    <label for="learningLanguage">Language you want to learn</label>
+                    <input id="learningLanguage" name="learningLanguage" type="text" placeholder="e.g. English" required>
+                </div>
+
+                <button type="submit">Find My Language Partners →</button>
+            </form>
+
+            <p id="message" role="status" aria-live="polite"></p>
+        </section>
+
+        
+<section id="matchesSection" class="panel" hidden>
+    <h2>Your potential language partners</h2>
+    <p id="matchSummary"></p>
+    <div id="matchesList"></div>
+</section>
+
+<section id="profileSection" class="panel" hidden>
+    <button type="button" id="backToMatches" class="secondary-button">
+        ← Back to partners
+    </button>
+
+    <h2>Partner Profile</h2>
+    <div id="profileDetails"></div>
+
+    <button type="button" id="startChatButton">
+        Start Chat 💬
+    </button>
+</section>
+
+<section id="chatSection" class="panel" hidden>
+    <button type="button" id="backToProfile" class="secondary-button">
+        ← Back to profile
+    </button>
+
+    <h2 id="chatTitle">Chat</h2>
+    <p class="panel-description">
+        Practice languages and learn about each other's cultures.
+    </p>
+
+    <div id="chatMessages" class="chat-messages"></div>
+
+    <form id="chatForm">
+        <label for="chatInput">Your message</label>
+        <textarea
+            id="chatInput"
+            rows="2"
+            maxlength="2000"
+            placeholder="Type your message..."
+            required
+        ></textarea>
+
+        <button type="submit">Send Message ➤</button>
+    </form>
+
+    <p id="chatStatus" role="status" aria-live="polite"></p>
+</section>
+
+
+        <footer>
+            Culture Exchange Network · Connecting people through language
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
