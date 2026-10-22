@@ -1,0 +1,294 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --primary: #5b4bdb;
+    --primary-dark: #4636bc;
+    --background: #f5f6fc;
+    --text: #252746;
+    --muted: #6c7190;
+    --border: #e5e7f1;
+    --white: #ffffff;
+    --success: #18794e;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+.container {
+    width: min(920px, 92%);
+    margin: 0 auto;
+    padding: 48px 0;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 58px;
+    height: 58px;
+    border-radius: 18px;
+    background: #e8e5ff;
+    font-size: 28px;
+    margin-bottom: 14px;
+}
+
+header h1 {
+    font-size: clamp(28px, 5vw, 42px);
+    line-height: 1.2;
+    margin-bottom: 12px;
+    letter-spacing: -1px;
+}
+
+header p {
+    max-width: 570px;
+    margin: 0 auto;
+    color: var(--muted);
+    font-size: 16px;
+}
+
+.panel {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    padding: 30px;
+    box-shadow: 0 12px 36px rgba(44, 43, 90, 0.06);
+    margin-bottom: 28px;
+}
+
+.panel h2 {
+    font-size: 23px;
+    margin-bottom: 6px;
+}
+
+.panel-description {
+    color: var(--muted);
+    margin-bottom: 24px;
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.form-field label {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.form-field input {
+    width: 100%;
+    padding: 13px 14px;
+    border: 1px solid #d9dced;
+    border-radius: 11px;
+    background: #fff;
+    color: var(--text);
+    font: inherit;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-field input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(91, 75, 219, 0.12);
+}
+
+button {
+    border: none;
+    border-radius: 11px;
+    padding: 14px 20px;
+    background: var(--primary);
+    color: white;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+button:hover {
+    background: var(--primary-dark);
+    transform: translateY(-1px);
+}
+
+form button {
+    grid-column: 1 / -1;
+    margin-top: 4px;
+}
+
+#message {
+    margin-top: 16px;
+    color: var(--success);
+    font-weight: 600;
+    overflow-wrap: anywhere;
+}
+
+#matchesSection {
+    margin-top: 30px;
+}
+
+#matchesSection[hidden] {
+    display: none;
+}
+
+#matchSummary {
+    color: var(--muted);
+    margin: 5px 0 20px;
+}
+
+#matchesList {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 18px;
+}
+
+.partner-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 17px;
+    padding: 22px;
+    box-shadow: 0 6px 18px rgba(44, 43, 90, 0.04);
+    overflow-wrap: anywhere;
+}
+
+.partner-card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+}
+
+.partner-card p {
+    color: var(--muted);
+    margin: 5px 0;
+}
+
+.match-badge {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 6px 11px;
+    border-radius: 20px;
+    background: #e7f8ef;
+    color: #18794e;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+footer {
+    text-align: center;
+    padding: 22px 0;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 28px 0;
+    }
+
+    .panel {
+        padding: 21px;
+        border-radius: 17px;
+    }
+
+    form {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    form button {
+        grid-column: auto;
+    }
+}
+
+.secondary-button {
+    background: #eee9ff;
+    color: #5634a5;
+    margin-bottom: 18px;
+}
+
+.partner-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 14px;
+}
+
+.partner-actions button {
+    flex: 1;
+    min-width: 120px;
+}
+
+.chat-messages {
+    min-height: 150px;
+    max-height: 350px;
+    overflow-y: auto;
+    padding: 14px;
+    margin: 18px 0;
+    border: 1px solid #e5e0f0;
+    border-radius: 12px;
+    background: #faf9ff;
+}
+
+.chat-message {
+    padding: 10px 13px;
+    margin: 8px 0;
+    border-radius: 12px;
+    overflow-wrap: anywhere;
+}
+
+.chat-message.sent {
+    margin-left: 15%;
+    background: #e8ddff;
+}
+
+.chat-message.received {
+    margin-right: 15%;
+    background: #e8f5e9;
+}
+
+.chat-message small {
+    display: block;
+    margin-top: 5px;
+    color: #666;
+    font-size: 12px;
+}
+
+#chatForm textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0 12px;
+    border: 1px solid #d8d1e8;
+    border-radius: 10px;
+    font: inherit;
+    resize: vertical;
+    box-sizing: border-box;
+}
+
+#profileDetails {
+    line-height: 1.8;
+    margin: 16px 0;
+}
+
+#profileDetails h3 {
+    margin-bottom: 8px;
+}
